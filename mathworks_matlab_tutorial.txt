@@ -1,0 +1,1491 @@
+April 25, 2020
+
+Commands
+Enter commands in MATLAB to perform calculations and create variables.
+
+Task 1
+
+You can execute commands by entering them in the command window after the 
+MATLAB prompt (>>) and pressing the Enter key.
+
+Task
+Multiply the numbers 3 and 5 together with the command 3*5.
+
+>> 3*5
+
+Task 2
+
+Unless otherwise specified, MATLAB stores calculations in a variable named ans.
+
+>> 7 + 3
+ans = 
+    10
+    
+Task
+Assign the 3*5 calculation to a variable named m as shown:
+
+m = 3*5
+
+>> m = 3*5
+
+Vectors and Matrices
+Create MATLAB variables that contain multiple elements.
+
+What's an Array?
+
+All MATLAB variables are arrays. This means that each variable can contain 
+multiple elements. You can use arrays to store related data in one variable.
+
+Because you'll use arrays every time you program, it's important to get to know
+them and the terminology used to describe them.
+
+Manually Entering Arrays
+
+Task 1
+
+A single number, called a scalar, is actually a 1-by-1 array, meaning it
+contains 1 row and 1 column.
+
+Task
+Create a variable named x with a value of 4.
+
+x = 4
+
+Task 2
+
+You can create arrays with multiple elements using square brackets.
+
+  x = [3 5]
+  x = 
+      3    5
+      
+Task
+Create an array named x with two elements: 7 and 9.
+
+x = [7 9]
+x = [7, 9]
+
+Task 3
+
+When you separate numbers by spaces (or commas) as shown in the previous task,
+MATLAB combines the numbers into a row vector, which is an array with one row 
+and multiple columns (1-by-n). When you separate numbers by semicolons, MATLAB
+creates a column vector (n-by-1).
+
+  x = [1;3]
+  x = 
+      1
+      3
+      
+Task
+Create an array named x with two elements, 7 and 9, in a single column.
+
+x = [7;9]
+
+Task 4
+
+Task
+Create a row vector named x that contains the values 3, 10, and 5 in that
+order.
+
+x = [3 10 5]
+
+Task 5
+
+Task
+Create a column vector named x that contains the values 8, 2, and -4 in that 
+order.
+
+x = [8;2;-4]
+
+Task 6
+
+You can combine spaces and semicolons to create a matrix, which is an array 
+with multiple rows and columns. When entering a matrix, you must enter them row
+by row.
+
+  x = [3 4 5;6 7 8]
+  x = 
+      3    4    5
+      6    7    8
+      
+Task
+Create a matrix named x with the values shown below.
+
+  5    6    7
+  8    9   10
+  
+x = [5 6 7;8 9 10]
+
+Task 7
+
+In MATLAB, you can perform calculations within the square brackets.
+
+  x = [abs(-4) 4^2]
+  x = 
+       4    16
+       
+Task
+Create a row vector named x that contains sqrt(10) as its first element and 
+pi^2 (pisquared) as its second element.
+
+x = [sqrt(10) pi^2]
+
+Further Practice
+
+Arrays are used throughout MATLAB. In fact, MATLAB is an abbreviation for
+MATrix LABoratory. You'll find that most MATLAB functionality can work on 
+multiple values at once.
+
+There is some flexibility when you create arrays. For example, these are all
+valid ways to create the same array:
+
+  x = [7 9]
+  x = [7,9]
+  x = [7, 9]
+
+Try experimenting with whitespace, commas, and semicolons when creating this
+matrix:
+
+  [ 7  1 8 ]
+  [ 4  5 8 ]
+  [ 10 4 2 ]
+
+  x = [7 1 8;4 5 8;10 4 2]
+  
+Creating Evenly-Spaced Vectors
+
+Task 1
+
+It is common to create vectors containing evenly-spaced numbers, such as the
+vector below.
+
+y = [5 6 7 8]
+y = 
+    5    6    7    8
+    
+Task
+Create a row vector named x that contains the values 1, 2, and 3, in that order.
+
+x = [1 2 3]
+
+Task 2
+
+For long vectors, entering individual numbers is not practical. An alternative, 
+shorthand method for creating evenly-spaced vectors is to use the : operator 
+and specify only the start and end points.
+
+y = 5:8
+y = 
+    5    6    7    8
+    
+Notice that square brackets are not needed when you use the colon operator.
+
+Task
+Create a row vector named x with the values 1, 2, 3, and 4, but this time using
+the : operator.
+
+x = 1:4
+
+Task 3
+
+The : operator uses a default spacing of 1, however you can specify your own 
+spacing, as shown below.
+
+x = 20:2:26
+x = 
+    20    22    24    26
+
+Task
+Create a row vector named x that starts at 1, ends at 5, and each element is 
+separated by 0.5.
+
+x = 1:0.5:5
+
+Task 4
+
+Task
+Create a row vector named x that starts at 3 and ends at 13, with each element
+separated by 2.
+
+x = 3:2:13
+
+Task 5
+
+If you know the number of elements you want in a vector (instead of the spacing
+between each element), you could instead use the linspace function:
+
+  linspace(first,last,number_of_elements).
+
+Note the use of commas (,) to separate inputs to the linspace function.
+
+x = linspace(0,1,5)
+x = 
+    0    0.250    0.500    0.750    1.000
+
+Task
+Create a row vector named x that starts at 1, ends at 10, and contains 5 
+elements.
+
+x = linspace(1,10,5)
+
+Task 6
+
+Both linspace and the : operator create row vectors. However, you can convert a
+row vector into a column vector using the transpose operator (').
+
+x = 1:3;
+x = x'
+x = 
+    1
+    2
+    3
+
+Task
+Transpose x from a row vector to a column vector using the transpose operator.
+
+x = x'
+
+Task 7
+
+You can create column vectors in a single command by creating the row vector 
+and transposing it all on one line. Note the use of parentheses here to specify
+the order of operations.
+
+x = (1:2:5)'
+x = 
+    1
+    3
+    5
+
+Task
+In a single command, create a column vector named x that starts at 5, ends at 9
+and has elements that are spaced by 2.
+
+x = (5:2:9)'
+
+Further Practice
+
+Notice that if you are using linspace or : to create a vector, you don't need
+to use brackets ([]).
+
+If you wanted to create an evenly-spaced vector from 1 to 2p with 100 elements,
+would you use linspace or :?
+
+Use linspace and not :.
+
+Array Creation Functions
+
+Task 1
+
+MATLAB contains many functions that help you to create commonly used matrices,
+such as matrices of random numbers.
+
+x = rand(2)
+x = 
+    0.8147    0.1270
+    0.9058    0.9134
+    
+Note that the 2 in the command rand(2) specifies that the output will be a
+2-by-2 matrix of random numbers.
+
+Task
+Create a variable named x that is a 5-by-5 matrix of random numbers.
+
+x = rand(5)
+
+Task 2
+
+Many matrix creation functions allow you to input one number to create a square
+matrix (n-by-n) or input two numbers to create nonsquare matrices.
+
+x = rand(2)
+x = 
+    0.8147    0.1270
+    0.9058    0.9134
+
+x = rand(2,3)
+x = 
+    0.6324    0.2785    0.9575
+    0.0975    0.5469    0.9649
+    
+Task
+Use rand to create an array that contains 5 rows and 1 column. Assign the 
+result to a variable named x.
+
+x = rand(5,1)
+
+Task 3
+
+Task
+Use the zeros function to create a matrix of all zeros that has 6 rows and 3 
+columns (6-by-3). Assign the result to a variable named x.
+
+x = zeros(6,3)
+
+Further Practice
+
+How do you get the size of an existing matrix? You can use the size function.
+
+size(x)
+
+You can also create a matrix with the same size as an existing matrix in one 
+line of code.
+
+rand(size(x))
+
+Indexing into and Modifying Arrays
+Use indexing to extract and modify rows, columns, and elements of MATLAB arrays.
+
+Task 1
+
+You can extract values from an array using row, column indexing.
+
+y = A(5,7)
+
+This syntax extracts the value in the 5th row and 7th column of A and assigns 
+the result to the variable y.
+
+Task
+Create a variable x that contains the value in the 6th row and 3rd column of 
+the variable data.
+
+load datafile
+data
+x = data(6,3)
+
+Task 2
+
+You can use the MATLAB keyword end as either a row or column index to reference 
+the last element.
+
+y = A(end,2)
+
+Task
+Use the end keyword to obtain the value in the last row and 3rd column of the
+variable data. Assign this value to a variable named x.
+
+x = data(end,3)
+
+Task 3
+
+Note that you can use arithmetic with the keyword end. For example:
+y = A(end-1,end-2)
+
+Task
+Create a scalar variable x that contains the value in the second to last 
+(end-1) row and 3rd column of data.
+
+x = data(end-1,3)
+
+Further Practice
+
+If you only use one index with a matrix, it will traverse down each column in
+order. Using one index, try extracting the eighth element of data.
+
+You can also use variables as your index. Try creating a variable y, and using
+y as the index to data.
+
+Extracting Multiple Elements
+
+Task 1
+
+When used as an index, the colon operator (:) specifies all the elements in
+that dimension. The syntax
+
+x = A(2,:)
+
+creates a row vector containing all of the elements from the second row of A.
+
+Task
+Create a variable named density that contains the second column of the matrix 
+named data.
+
+density = data(:,2)
+
+Task 2
+
+The colon operator can refer to a range of values. The following syntax creates
+a matrix containing the first, second, and third rows of the matrix A.
+
+x = A(1:3,:)
+
+Task
+Create a variable volumes containing the last two columns of data.
+
+volumes = data(:,3:4)
+
+Task 3
+
+A single index value can be used to reference vector elements. For example 
+
+x = v(3)
+
+returns the third element of vector v when v is either a row or column vector.
+
+Task
+Using a single index value, create a variable named p containing the 6th
+element in the vector density.
+
+p = density(6)
+
+Task 4
+
+A single range of index values can be used to reference a subset of vector 
+elements. For example 
+
+x = v(3:end)
+
+returns a subset of vector v containing the elements from 3 to the end.
+
+Task
+Using a range of index values, create a vector named p containing the 2nd
+through 5th elements of density.
+
+p = density(2:5)
+
+Further Practice
+
+Indices can be non-consecutive numbers. Try extracting the first, third, and 
+sixth elements of density.
+
+Changing Values in Array
+
+Task 1
+
+Remember you can use the : character to extract entire columns of data.
+
+Task
+Create a vector named v2 containing the last column of data.
+
+v2 = data(:,4)
+
+Task 2
+
+Elements of a variable can be altered by combining indexing with assignment.
+
+A(2) = 11
+
+Task
+Change the first element in v2 from NaN to 0.5.
+
+v2(1) = 0.5
+
+Task 3
+
+Task
+Change the value of the element in the first row and last column of data to 0.5.
+
+data(1,4) = 0.5
+data(1,end) = 0.5
+
+Further Practice
+
+You can combine indexing with assignment to change array values to equal other
+elements. For example, this code would change the value of x(1) to x(2):
+
+x(1) = x(2)
+
+Try changing the first column of data to the second column of data. 
+
+Performing Array Operations on Vectors
+
+Task 1
+
+MATLAB is designed to work naturally with arrays. For example, you can add a
+scalar value to all the elements of an array.
+
+y = x + 2
+
+Task
+Add 1 to each element of v1 and store the result in a variable named r.
+
+r = v1+1
+
+Task 2
+
+You can add together any two arrays of the same size.
+
+z = x + y
+
+Task
+Create a vector vs that is the sum of the vectors v1 and v2.
+
+vs = v1+v2
+
+Task 3
+
+You can multiply or divide all of the elements of an array by a scalar.
+
+z = 2*x
+y = x/3
+
+Task
+Create a variable va that contains the value vs divided by 2 (the average 
+volume).
+
+va = vs/2
+
+Task 4
+
+Basic statistical functions in MATLAB can be applied to a vector to produce a
+single output. The maximum value of a vector can be determined using the max 
+function.
+
+xMax = max(x)
+
+Task
+Create a variable vm containing the maximum of the va vector.
+
+vm = max(va)
+
+Task 5
+
+MATLAB has functions that perform mathematical operations on an entire vector
+or array of values in a single command.
+
+xSqrt = sqrt(x)
+
+Task
+Using the round function, create a variable named vr which contains the rounded
+average volumes, va.
+
+vr = round(va)
+
+Task 6
+
+The * operator performs matrix multiplication. So, if you use * to multiply two 
+equally sized vectors, since the inner dimensions do not agree, you will get an 
+error message.
+
+z = [3 4] * [10 20]
+
+Error using  * 
+Incorrect dimensions for matrix multiplication. 
+
+In contrast, the .* operator performs elementwise multiplication and allows you
+to multiply the corresponding elements of two equally sized arrays.
+
+z = [3 4] .* [10 20]
+z = 
+    30    80
+Task
+Create a variable named mass containing the elementwise product of density and 
+va.
+
+mass = density*va	Error using _*
+mass = density.*va	Correct!
+
+Further Practice
+
+You have performed array operations with 
+
+- two arrays of the same size
+- a scalar and an array
+
+There are other compatible sizes. For example, try the following:
+
+x = [1 2;3 4;5 6; 7 8].*[1;2;3;4]
+What size is x?
+
+You can read more about this behavior here:
+Compatible Array Sizes for Basic Operations
+
+Obtaining Multiple Outputs from Function Calls
+
+Task 1
+
+The size function can be applied to an array to produce a single output
+variable containing the array size. 
+
+s = size(x)
+
+Task
+Create a variable named dsize containing the size of the data variable.
+
+dsize = size(data)
+
+Task 2
+
+The size function can be applied to a matrix to produce either a single output
+variable or two output variables. Use square brackets ([ ]) to obtain more than
+one output.
+
+[xrow,xcol] = size(x)
+
+Task
+Create the variables dr and dc which respectively contain the number of rows 
+and columns of the variable data.
+
+[dr,dc] = size(data)
+
+Task 3
+
+The maximum value of a vector and its corresponding index value can be 
+determined using the max function. The first output from the max function is 
+the maximum value of the input vector. When called with two outputs, the second
+output is the index value.
+
+[xMax,idx] = max(x)
+
+Task
+Create the variables vMax and ivMax containing the maximum value of the v2
+vector and the corresponding index value respectively.
+
+[vMax,ivMax] = max(v2)
+
+Further Practice
+
+If you only need the second output from a function, you can use a tilde (~) to
+ignore specific outputs.
+
+For example, you might only want the index containing the maximum value in a
+vector:
+
+density = data(:,2)
+[~,ivMax] = max(v2)
+densityMax = density(ivMax)
+
+Try getting the index value of the minimum value in v2. Use this index to 
+extract from density.
+
+Plotting Data
+Visualize variables using MATLAB's plotting functions.
+
+Plotting Vectors
+
+Task 1
+
+Two vectors of the same length can be plotted against each other using the plot
+function.
+
+plot(x,y)
+
+Task
+Create a plot with sample on the x-axis and mass1 on the y-axis.
+
+plot(sample,mass1)
+
+Task 2
+
+The plot function accepts an additional argument that allows you to specify the
+color, line style, and marker style using different symbols in single quotes.
+
+plot(x,y,"r--o")
+
+The command above plots a red (r) dashed (--) line with a circle (o) as a 
+marker. You can learn more about the symbols available in the documentation for
+Line Specification.
+
+Task
+Plot mass2 (y-axis) against sample (x-axis). Use red (r) star (*) markers and
+no line in your plot.
+
+plot(sample,mass2,"r*")
+
+Task 3
+
+Notice that each plot command created a separate plot. To plot one line on top
+of another, use the hold on command to hold the previous plot while you add
+another line.
+
+Task
+Enter the hold on command.
+
+Then plot mass1 (y-axis) against sample (x-axis) with black (k) square (s) 
+markers and no line.
+
+plot(sample,mass2,"r*")
+hold on
+plot(sample,mass1,"ks")
+
+Task 4
+
+While the hold state is on, plots will continue to go on the same axes. To
+return to the default plot behavior, where each plot gets its own axes, enter 
+hold off.
+
+Task
+Enter the hold off command.
+
+hold off
+
+Task 5
+
+When you plot a single vector by itself, MATLAB uses the vector values as the
+y-axis data and sets the x-axis data to range from 1 to n (the number of elements in the vector).
+
+Task
+Plot the vector v1 using the command below.
+plot(v1)
+
+plot(v1)
+
+Task 6
+
+The plot function accepts optional additional inputs consisting of a property
+name and an associated value.
+
+plot(y,"LineWidth",5)
+
+The command above plots a heavy line. You can learn more about available 
+properties in the documentation for Line Properties.
+
+Task
+Plot v1 with a line width of 3.
+
+plot(v1,"LineWidth",3)
+
+Task 7
+
+The plot function accepts a property name and property value pair after the 
+plotted arguments and line specifier.
+
+plot(x,y,"ro-","LineWidth",5)
+
+Task
+Plot v1 (y-axis) against sample (x-axis) with red (r) circle (o) markers with a
+line width of 4.
+
+plot(sample,v1,"ro-","LineWidth",4)
+
+Further Practice
+
+The plot function creates lines. There are many other plotting functions in
+MATLAB. You can see an extensive list in the MATLAB Plot Gallery.
+
+Each plot has different customization options. Try creating a histogram of 
+density with the histogram function. Set the "FaceColor" to yellow ("y").
+
+Annotating Plots
+
+Task 1
+
+Labels can be added to plots using plot annotation functions, such as title. 
+The input to these functions is a string. Strings in MATLAB are enclosed in 
+double quotes (").
+
+title("Plot Title")
+
+Task
+Add the title "Sample Mass" to the existing plot.
+
+title("Sample Mass")
+
+Task 2
+
+Task
+Use the ylabel function to add the label "Mass (g)".
+
+ylabel("Mass (g)")
+
+Task 3
+
+You can add a legend to your plot using the legend function.
+
+legend("a","b","c")
+
+Task
+Create a legend with the labels "Exp A" and "Exp B", in that order.
+
+legend("Exp A","Exp B")
+
+Further Practice
+
+You can use a variable's value in plot annotations by concatenating a string
+with a variable:
+
+bar(data(3,:))
+title("Sample " + sample(3) + " Data")
+
+Review Problems
+Bring together concepts that you have learned with a project.
+Project 1 - Electricity Usage
+
+Task 1
+
+Task
+Electricity data is stored in a file named electricity.mat. Load that MAT-file 
+into MATLAB.
+
+Then enter usage in the script to see the matrix.
+
+load electricity.mat
+usage
+
+Task 2
+
+In MATLAB, NaN (or, "Not a Number") is used to represent missing data.
+
+Task
+One of the elements in the usage variable has a value of NaN. Replace this
+value with the value 2.74.
+
+usage(2,3) = 2.74
+
+Task 3
+
+Task
+The residential data is stored in the first column. Create a variable res that
+contains the first column of usage.
+
+res = usage(:,1)
+
+Task 4
+
+Task
+The commercial data and industrial data are stored in the second and third 
+column, respectively. Create variables comm and ind that contain the second and
+third columns of usage.
+
+comm = usage(:,2), ind = usage(:,3)
+
+Task 5
+
+The usage data was collected annually between the years 1991 to 2013. The yrs 
+variable you create will help you to plot the data over a meaningful range.
+
+Task
+Create a vector named yrs that represents the years starting at 1991 and ending
+with 2013.
+
+yrs = [1991:2013]
+
+Task 6
+
+Task
+Create a plot with all three columns. Use yrs as the x-data. Use this order and 
+these plot specifications:
+
+1. res: blue (b) dashed line (--)
+2. comm: black (k) dotted line (:)
+3. ind: magenta (m) dash-dot line (-.)
+   (Line specification options)
+   
+plot(yrs,res,"b--")
+hold on
+plot(yrs,comm,"k:")
+plot(yrs,ind,"m-.")
+hold off
+
+Task 7
+
+Task
+Add the title "July Electricity Usage" to the existing plot.
+
+Create a legend with the values "res", "comm", and "ind".
+
+title("July Electricity Usage")
+legend("res","comm","ind")
+
+Further Practice
+
+When looking at the figure, it is clear that the industrial sector's 
+electricity usage is fairly consistent and does not seem to fluctuate as much
+as the residential and commercial sectors.
+
+Project 2 - Audio Frequency
+
+Task 1
+
+The C chord recording is stored in a file named Cchord.mat. This file contains
+two variables:
+
+y: signal from recording
+fs: sampling frequency
+
+This task uses the numel function to return the number of elements in an array.
+
+Task
+Load the file Cchord.mat.
+
+Create a variable named n that contains the number of elements in y. Then use n
+to create an evenly-spaced vector t that starts at 0, ends at n-1, and has
+elements that are spaced by 1.
+
+load Cchord.mat
+who
+n = numel(y)
+t = 0:n-1
+
+Task 2
+
+t now has the correct number of points, but it needs to represent the times 
+when the audio signal was sampled. You can use the sampling frequency fs to 
+convert the vector to time (in seconds).
+
+Task
+Divide t by fs. Assign the output to the same variable t. Then plot y against t.
+
+t = t/fs
+plot(t,y)
+
+Task 3
+
+In the plot, notice that y is periodic, but it's not a simple sine wave. It's 
+made up of multiple sine waves with different frequencies.
+
+A Fourier transform will return information about the frequency content of the
+signal. The location of the dominant frequencies will show what notes are 
+contained in the chord.
+
+You can use the fft function to compute the discrete Fourier transform of a
+vector.
+
+fft(y)
+
+The output values from fft are complex numbers. You can use the abs function to
+get the magnitude.
+
+Task
+Create a variable named yfft that contains the absolute value of the discrete
+Fourier transform of y.
+
+%yfft = fft(abs(y))
+yfft = abs(fft(y))
+plot(t,yfft)
+
+Task 4
+
+In Tasks 1 and 2, you calculated the time vector t for the signal y. Similarly,
+you need to calculate the frequency vector f for your FFT vector yfft.
+
+Task
+Create an evenly-spaced vector f that starts at 0, ends at n-1, and has 
+elements that are spaced by 1.
+
+f = 0:n-1
+
+Task 5
+
+The vector f now contains n points. To convert these points to frequencies, you
+can multiply the entire vector by the sampling frequency (fs) and divide it by
+the number of points (n).
+
+f will contain frequences from 0 to fs. The dominant frequencies are located at
+the beginning of f. You can use the xlim function to zoom in on the area of 
+interest.
+
+xlim([xmin xmax])
+
+Task
+Multiply f with fs/n. Assign the output to the same variable f.
+
+Plot yfft against f using the x-limits 0 and 1000.
+
+f = f*fs/n
+plot(f,yfft)
+xlim([0 1000])
+
+Further Practice
+Use the data cursor in the output pane to see the frequency locations.
+
+
+The first three spikes are the notes comprising a middle C chord.
+
+What are the other three spikes? When a chord is played, the signal contains 
+fundamental frequencies and the associated harmonics. In this case, the
+harmonics are another octave of the same chord.
+
+Using the frequencies in the table below, you can see that the 6 spikes in the
+plot correspond to the fundamental frequencies and the first harmonics of a 
+middle C chord.
+
+Note    Frequency
+C4      261.6
+E4      329.6
+G4      392.0
+C5      525.3
+E5      659.3
+G5      784.0
+
+Importing Data
+Bring data from external files into MATLAB.
+
+Importing Data as a Table
+
+Task 1
+
+To extract a variable from the table, you can use dot notation:
+
+data.VariableName
+
+Task
+Assign the contents of elements.Density to a column vector named d.
+
+d = [elements.Density;]
+
+Task 2
+
+If you are working with a table, you might want to keep related data together.
+Instead of creating separate variables, you can assign the result of a
+calculation to a table.
+
+data.HeightMeters = data.HeightYards*0.9144
+
+If the variable data.HeightMeters doesn't exist, MATLAB will create a new 
+variable in the table with the name HeightMeters.
+
+Task
+Multiply each element of elements.Density with elements.Volume1. Remember
+to use .*.
+
+Assign the result to elements.Mass.
+
+elements.Mass = elements.Density.*elements.Volume1
+
+Task 3
+
+You can interact with a table by clicking on it in the output pane of a live
+script. For example, you can sort a table using one of its variables.
+
+Once you are happy with your table, you can make the changes permanent by
+updating the code in your script.
+
+Task
+Sort the table by smallest to largest mass. Then update the code in the script
+before clicking Submit.
+
+elements.Mass = elements.Density.*elements.Volume1
+
+elements = sortrows(elements,'Density');
+elements = sortrows(elements,'Mass')
+
+Further Practice
+
+Dot notation is used to extract table variables. To extract rows, you can use
+regular array indexing.
+
+Try extracting the first three rows of the table:
+
+top3 = elements(1:3,:)
+
+Notice that top3 is also a table.
+
+Logical Arrays
+Use logical expressions to help you to extract elements of interest from 
+MATLAB arrays.
+
+Logical Indexing
+
+Task 1
+
+Relational operators, such as >, <, ==, and ~= perform comparisons between two
+values. The outcome of a comparison for equality or inequality is either 1 
+(true) or 0 (false).
+
+Task
+Use the relational operator, <, to test if p is less than 4. Assign the output
+to a variable named test.
+
+test = pi<4
+
+Task 2
+
+You can compare a vector or matrix to a single scalar value using relational
+operators. The result is a logical array of the same size as the original
+array.
+
+[5 10 15] > 12
+ans = 
+    0    0    1
+
+Task
+Test the vector v1 for elements that are less than 4. Assign the output to a
+variable named test.
+
+test = v1 < 4
+
+Task 3
+
+You can use a logical array as an array index, in which case MATLAB extracts
+the array elements where the index is true. The following example will extract
+all elements in v1 that are greater than six.
+
+v = v1(v1 > 6)
+v =
+    6.6678
+    9.0698
+    
+Task
+Create a variable v containing all the elements in v1 that are less than four.
+
+v = v1(v1<4)
+
+Task 4
+
+You can also use logical indexing with two different vectors.
+
+v = sample(v1 > 6)
+v =
+    18
+    23
+    
+Task
+Create a variable s that contains the elements in sample corresponding to where 
+v1 is less than 4.
+
+s = sample(v1<4)
+
+Task 5
+
+You can use logical indexing to reassign values in an array. For example, if
+you wish to replace all values in the array x that are equal to 999 with the 
+value 1, use the following syntax.
+
+x(x==999) = 1
+
+Task
+Modify v1 so that any value less than 4 is replaced with the value 0.
+
+v1(v1<4) = 0
+
+Further Practice
+
+You can use the logical operators and (&) and or (|) to combine logical 
+comparisons.
+
+To find values less than 4 and greater than 2, use &:
+
+x = v1(v1<4 & v1>2)
+
+To find values greater than 6 or less than 2, use |:
+
+x = v1(v1>6 | v1<2)
+
+Try getting the values in sample that are between 10 and 20.
+
+Programming
+Write programs that execute code based upon some condition.
+
+Programming Constructs
+Decision Branching
+
+Task 1
+
+The body of an if block is only executed if the condition is true.
+
+Task
+Modify the script so that the plotting code on lines 4-7 are executed only when
+doPlot is 1.
+
+doPlot = randi([0 1])
+load datafile
+density = data(:,1);
+if doPlot == 1
+  plot(density)
+  title("Sample Densities")
+  xticklabels(element)
+  ylabel("Density (g/cm^3)")
+end
+
+Task 2
+
+Often in these situations, you may want to execute some other code if the
+condition is not met. To do this, you can use the else keyword, as shown.
+
+x = rand
+if x > 0.5
+    y = 3
+else
+    y = 4
+end
+
+Task
+Modify the script so that when the if condition is not satisfied, the following
+line of code is executed:
+
+disp("The density of " + element ...
+    + " is " + density)
+
+if doPlot == 1
+  plot(density)
+  title("Sample Densities")
+  xticklabels(element)
+  ylabel("Density (g/cm^3)")
+else
+  disp("The density of " + element ...
+    + " is " + density)
+end
+
+Further Practice
+
+The elseif keyword can be used after if to add more conditions. You can include
+multiple elseif blocks.
+
+Try adding a variable doDisplay to toggle if the densities are displayed. Add 
+this condition with an elseif block.
+
+For Loops
+
+Task 1
+
+When this code is run, the loop body will be executed three times, as the loop 
+counter (c) progresses through the values 1:3 (1, 2, and 3).
+
+Task
+Wrap the code in the second section of the live script (lines 4-7) in a loop so
+that the code executes 7 times.
+
+Name your loop counter idx. For the first execution of the loop, idx should 
+have a value of 1, and it should increase by 1 each consecutive iteration.
+
+load datafile
+density = data(:,1);
+
+for idx = 1:7
+hold on
+plot(idx,density(idx),'*')
+hold off
+pause(0.2)
+end
+
+Further Practice
+
+Did you notice that the plot animates? The code pause(0.2) stops the loop for
+0.2 seconds so that the plot will update. Try increasing the animation time by
+increasing the value of 0.2.
+
+The loop executes 7 times because the density vector has seven elements. If you
+want to loop over a vector of unknown length, you can use the length function 
+instead:
+
+for idx = 1:length(density)
+
+Final Project
+Bring together concepts that you have learned with a project.
+
+Project - Stellar Motion
+
+Task 1
+
+The spectra data was collected at evenly-spaced wavelengths, and you know the
+starting wavelength (lambdastart), the spacing (lambdadelta), and the number of
+observations.
+
+Task
+Create a variable named lambdaEnd (lambdaend) that contains the value of the
+last wavelength in the recorded spectrum. You can calculate lambdaEnd with the
+equation ? lambdastart + (nObs-1)? lambdadelta
+.
+
+Use lambdaEnd to make a column vector named lambda (lambda) containing the
+wavelengths in the spectrum, from lambdastart to lambdaend, in steps of 
+lambdadelta.
+
+load starData
+nObs = size(spectra,1)
+lambdaStart = 630.02
+lambdaDelta = 0.14
+
+lambdaEnd = lambdaStart + (nObs-1)*lambdaDelta
+lambda = [lambdaStart:lambdaDelta:lambdaEnd]'
+
+Task 2
+
+Each column of spectra is the spectrum of a different star. The sixth column is
+the spectrum of star HD 94028.
+
+Task
+Extract the sixth column of spectra to a vector named s.
+
+s = spectra(:,6)
+
+Task 3
+
+Use the loglog function in the same way as the plot function to plot data using 
+a log scales for each axis.
+
+loglog(x,y,"*--")
+
+Task
+Plot the spectra (s) as a function of wavelength (lambda), using log scales on 
+both axes. Use point markers (.) and a solid line (-) connecting the points.
+
+Add the x-label "Wavelength" and the y-label "Intensity" to the plot.
+
+loglog(lambda,s,".-")
+xlabel("Wavelength")
+ylabel("Intensity")
+
+Task 4
+
+Recall that the min function allows two outputs, the second of which is the
+index at which the minimum value occurred. This index corresponds to the 
+location of the Hydrogen-alpha line.
+
+Task
+Create two variables, sHa and idx that contain the minimum value of s and the
+index where the minimum value occurred.
+
+Use idx to index into lambda to find the wavelength of the Hydrogen-alpha line.
+Store the result as lambdaHa (lambdaHa).
+
+[sHa,idx] = min(s)
+lambdaHa = lambda(idx)
+
+Task 5
+
+The line (lambdaHa,sHa) is the location of the Hydrogen-alpha line.
+
+Task
+Add a point to the existing graph by plotting x = lambdaHa, y = sHa as a red
+square ("rs") with a marker size ("MarkerSize") of 8.
+
+hold on
+loglog(lambdaHa,sHa,"rs","MarkerSize",8)
+hold off
+
+Task 6
+
+If you zoom in on the plot, you can see that the wavelength of the
+Hydrogen-alpha line of HD 94028 is 656.62 nm, which is slightly longer than the
+laboratory value of 656.28 nm.
+
+Using the Hydrogen-alpha wavelength of the star, you can calculate the redshift
+factor (the speed of the star relative to the earth) using the formula
+z=(lambdaHa/656.28)-1. You can then calculate the speed by multiplying the
+redshift factor by the speed of light (299792.458km/s).
+
+Task
+Calculate the redshift factor and the speed (in km/s) at which the star is 
+moving away from the earth. Assign the redshift factor to a variable called z 
+and the speed to a variable called speed.
+
+z = lambdaHa/656.28 - 1
+speed = z*299792.458
+
+Task 7
+
+Having created a live script for finding the redshift, you can easily modify
+the script to repeat the calculation on any star in the spectra matrix.
+
+Task
+Modify the Task 2 & 7 section of the script so that it performs the red shift
+calculation on the second star in spectra, not the sixth.
+
+s = spectra(:,2)
+
+Further Practice
+
+Instead of changing the index value, try using a slider to select any column in
+spectra.
+
+Add the slider, then right click on it to configure the slider values. The 
+values should go through each column in spectra, or 1:1:10.
+
+Project - Stellar Motion 2
+
+Task 1
+
+On line 2 of the displayed script, the spectrum data is extracted for the 
+second star in the matrix spectra. Then lines 3 through 5 calculate the speed
+based on that data. How would you calculate the speed of all the stars in
+spectra?
+
+You could repeat the calculations in a for loop, but it is more efficient to
+use array operations instead.
+
+Task
+Modify line 2 of the script. Delete (:,2) to calculate the speed of all the
+stars.
+
+load starData
+[sHa,idx] = min(spectra);
+lambdaHa = lambda(idx);
+z = lambdaHa/656.28 - 1;
+speed = z*299792.458
+
+Task 2
+
+Notice that speed is now a vector. A positive speed means that the star is
+moving away from us (redshifted spectrum), and a negative speed means the star
+is moving towards us (blueshifted spectrum).
+
+In the next few tasks, you'll create a plot containing all seven stars. You'll
+use different styles for redshifted and blueshifted spectra. Since the plot 
+command won't be the same for every star, it's convenient to use a for loop.
+
+Task
+Create a for loop with a loop index called c. The loop index should progress 
+through all columns of spectra (1 to 7).
+
+In the loop body, extract the cth column of spectra to a variable named s.
+
+for c = 1:7
+    s = spectra(:,c);
+end
+
+Task 3
+
+First, you'll plot the blueshifted spectra using dashed lines.
+
+Task
+Add an if statement to the for loop body. If speed(c) is less than or equal to
+0, create a loglog plot of s against lambda using a dashed line (--).
+
+After the if statement, add the command hold on so that only one plot is 
+created.
+
+for c = 1:7
+    s = spectra(:,c);
+
+    if speed(c) <= 0
+        loglog(lambda,s,"--")
+    end
+    hold on
+end
+
+Task 4
+
+You'll plot the redshifted spectra using a thick line.
+
+Task
+Add an else statement. If speed(c) is greater than 0, create a loglog plot of s
+against lambda using a line width of 3.
+
+After the for loop is complete, enter hold off.
+
+for c = 1:7
+    s = spectra(:,c);
+
+    if speed(c) <= 0
+        loglog(lambda,s,"--")
+    else
+       loglog(lambda,s,"LineWidth",3) 
+    end
+    hold on
+end
+hold off
+
+Task 5
+
+You can pass a string array directly to the legend function.
+
+The string array starnames contains the name of each star in spectra.
+
+Task
+Add a legend to the plot using the array starnames.
+
+legend(starnames)
+
+Task 6
+
+In the plot, you can use the line styles to identify the stars with redshifted 
+spectra, then look up their names in the legend. Can you determine the names of
+the redshifted spectra without a for loop?
+
+Recall that you can use logical indexing to find elements that match a condition.
+
+c = b(a < 6)
+
+Task
+Create a variable movaway that contains the elements in starnames corresponding
+to where speed is greater than 0.
+
+movaway = starnames(speed > 0) 
+
+Further Practice
+
+Complete! The next page contains a summary of all the concepts covered in this
+course.
