@@ -1,10 +1,10 @@
 # How-to-Talk-Linear-Algebra
 
+Linear Algebra 101    August 8, 2020
+
 I appreciate comments. Shoot me an email at noel_s_cruz@yahoo.com!
 
 Hire me!
-
-Linear Algebra 101
 
 Linear algebra is one of the mathematics,including Statistics and Probability,
 used in data science. Matlab, Python and R are the programming & scripting
